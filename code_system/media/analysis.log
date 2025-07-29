@@ -1,0 +1,60 @@
+[USER] admin
+[SAMPLE] SRR10305328
+[FILES] SRR10305328_1.fastq|SRR10305328_2.fastq
+[STAGE] fastp
+Detecting adapter sequence for read1...
+No adapter detected for read1
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 56764
+total bases: 17085964
+Q20 bases: 16435518(96.1931%)
+Q30 bases: 15565843(91.1031%)
+Q40 bases: 0(0%)
+
+Read2 before filtering:
+total reads: 56764
+total bases: 17085964
+Q20 bases: 15169997(88.7863%)
+Q30 bases: 13296431(77.8208%)
+Q40 bases: 0(0%)
+
+Read1 after filtering:
+total reads: 56764
+total bases: 16689423
+Q20 bases: 16341235(97.9137%)
+Q30 bases: 15510920(92.9386%)
+Q40 bases: 0(0%)
+
+Read2 after filtering:
+total reads: 56764
+total bases: 16297798
+Q20 bases: 15038858(92.2754%)
+Q30 bases: 13269590(81.4195%)
+Q40 bases: 0(0%)
+
+Filtering result:
+reads passed filter: 113528
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 0
+reads with adapter trimmed: 0
+bases trimmed due to adapters: 0
+
+Duplication rate: 0.0229018%
+
+Insert size peak (evaluated by paired-end reads): 476
+
+JSON report: /data/report.json
+HTML report: /data/report.html
+
+fastp -i /data/SRR10305328_1.fastq -I /data/SRR10305328_2.fastq -o /data/SRR10305328_clean_1.fastq -O /data/SRR10305328_clean_2.fastq --detect_adapter_for_pe --cut_front --cut_tail --length_required 100 -h /data/report.html -j /data/report.json -w 4 
+fastp v1.0.1, time used: 45 seconds
+[STAGE] qiime2
+[INFO] Starting QIIME2 analysis...
+[INFO] Running QIIME2 commands...
+[QIIME2] Imported /data/manifest.txt as PairedEndFastqManifestPhred33 to /data/paired-end-demux.qza
+[QIIME2] Saved Visualization to: /data/demux.qzv
